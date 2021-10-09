@@ -8,90 +8,64 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-  <link rel="stylesheet" href="game.css">
-  <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="dummy.css">
+  <title>Rock Paper Scissors</title>
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="header container-fluid my-4">
-      <div class="row">
-        <div class="col-1">
-          <a href="index.html" type="button" class="text-decoration-none">
-            <p class="h1 btn-back fw-bolder">&lt;</p>
-          </a>
-        </div>
-        <div class="col-1">
-          <img src="assets/logo.png" alt="logo" class="img-fluid" width="50em">
-        </div>
-        <div class="col-4">
-          <p class="h3 text-header text-uppercase text-warning">rock paper scissors</p>
-        </div>
-        <div class="col-6"></div>
+  <header class="my-md-3 d-flex align-items-center">
+    <button class="btn btn-back"><a class="btn-back-link display-2 fw-bold text-decoration-none"
+        href="#back">&lt;</a></button>
+    <img class="logo" src="assets/logo.png" alt="logo">
+    <p class="text-title h2 fw-bold text-uppercase">&nbsp; rock paper scissors</p>
+  </header>
+  <main class="container mx-auto">
+    <div class="row row-cols-3 text-center">
+      <div class="col my-md-2">
+        <p class="h2 fw-bold text-uppercase">player 1</p>
+      </div>
+      <div class="col my-md-2"></div>
+      <div class="col my-md-2">
+        <p class="h2 fw-bold text-uppercase">COM</p>
+      </div>
+      <div class="col my-md-3">
+        <button class="btn btn-play player p-batu">
+          <img src="assets/batu.png" alt="batu" width="100px">
+        </button>
+      </div>
+      <div class="col my-md-3"></div>
+      <div class="col my-md-3">
+        <button class="btn btn-play pe-none com c-batu">
+          <img src="assets/batu.png" alt="batu" width="100px">
+        </button>
+
+      </div>
+      <div class="col my-md-3">
+        <button class="btn btn-play player p-kertas">
+          <img src="assets/kertas.png" alt="kertas" width="100px">
+        </button>
+      </div>
+      <div class="col my-md-3">
+        <p class="middle display-1 fw-bolder text-uppercase text-danger">vs</p>
+      </div>
+      <div class="col my-md-3">
+        <button class="btn btn-play pe-none com c-kertas">
+          <img src="assets/kertas.png" alt="kertas" width="100px">
+        </button>
+      </div>
+      <div class="col my-md-3">
+        <button class="btn btn-play player p-gunting">
+          <img src="assets/gunting.png" alt="gunting" width="100px">
+        </button>
+      </div>
+      <div class="col my-md-3"></div>
+      <div class="col my-md-3">
+        <button class="btn btn-play pe-none com c-gunting">
+          <img src="assets/gunting.png" alt="gunting" width="100px">
+        </button>
       </div>
     </div>
-    <div class="content container text-center my-4">
-      <div class="row">
-        <div class="col-2 offset-3">
-          <p class="h2 char text-uppercase fw-bold my-4">player 1</p>
-        </div>
-        <div class="col-2"></div>
-        <div class="col-2">
-          <p class="h2 char text-uppercase fw-bold my-4">com</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-2 offset-3 my-4">
-          <button type="button" class="btn btn-hand">
-            <img src="assets/batu.png" alt="batu" class="img-fluid" width="100em">
-          </button>
-        </div>
-        <div class="col-2"></div>
-        <div class="col-2 my-4">
-          <button type="button" class="btn btn-hand">
-            <img src="assets/batu.png" alt="batu" class="img-fluid" width="100em">
-          </button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-2 offset-3 my-4">
-          <button type="button" class="btn btn-hand">
-            <img src="assets/kertas.png" alt="kertas" class="img-fluid" width="100em">
-          </button>
-        </div>
-        <div class="col-2 my-5">
-          <p class="display-1 fw-bolder text-danger">VS</p>
-        </div>
-        <div class="col-2 my-4">
-          <button type="button" class="btn btn-hand">
-            <img src="assets/kertas.png" alt="kertas" class="img-fluid" width="100em">
-          </button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-2 offset-3 my-4">
-          <button type="button" class="btn btn-hand">
-            <img src="assets/gunting.png" alt="gunting" class="img-fluid" width="100em">
-          </button>
-        </div>
-        <div class="col-2"></div>
-        <div class="col-2 my-4">
-          <button type="button" class="btn btn-hand">
-            <img src="assets/gunting.png" alt="gunting" class="img-fluid" width="100em">
-          </button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-2 offset-3"></div>
-        <div class="col-2">
-          <button type="button" class="btn btn-refresh">
-            <img src="assets/refresh.png" alt="refresh" class="img-fluid" width="50em">
-          </button>
-        </div>
-        <div class="col-2"></div>
-      </div>
-    </div>
-  </div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">

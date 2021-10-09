@@ -1,15 +1,114 @@
-* {
-    margin: 0;
+:root {
+    --bg-color: #9c835f;
+    --btn-back: #724c21;
+    --orange-color: #f9b23e;
+    --orange-dark: #c78e32;
+    --btn-play-bg: #c4c4c4;
 }
 
 body {
-    background-color: #9C835F;
-}
-
-.char {
-    letter-spacing: 3px;
+    background-color: var(--bg-color);
 }
 
 .btn-back {
-    color: #724C21;
+    margin-top: -2vh;
+}
+
+.btn-back-link {
+    color: var(--btn-back);
+}
+
+.btn-back-link:hover {
+    color: none;
+    animation-name: back;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.text-title {
+    color: var(--orange-color);
+}
+
+@keyframes back {
+    0% {
+        color: var(--btn-back);
+    }
+
+    50% {
+        color: var(--orange-dark);
+    }
+
+    100% {
+        color: var(--orange-color);
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    header {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .text-title {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 510px) {
+    header {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .text-title {
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1300px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+.btn-play {
+    height: 150px;
+    width: 150px;
+}
+
+.player:hover,
+.player:focus {
+    height: 150px;
+    width: 150px;
+    border-radius: 15%;
+}
+
+.player:hover {
+    animation-name: play;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+
+.player:focus {
+    background-color: var(--btn-play-bg);
+}
+
+@keyframes play {
+    100% {
+        background-color: var(--btn-play-bg);
+    }
 }
