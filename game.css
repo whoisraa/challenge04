@@ -10,6 +10,10 @@ body {
     background-color: var(--bg-color);
 }
 
+.h2 {
+    letter-spacing: 2px;
+}
+
 .btn-back {
     margin-top: -2vh;
 }
@@ -125,8 +129,9 @@ body {
     }
 }
 
-#refresh {
+#text-refresh {
     margin-top: 15vh;
+    font-size: 1.2rem;
 }
 
 #refresh:hover {
@@ -169,6 +174,10 @@ body {
     padding: 53px 40px;
 }
 
+.disable-click {
+    pointer-events: none;
+}
+
 @media (min-width: 320px) and (max-width: 375px) {
     .btn-play {
         height: 80px;
@@ -187,9 +196,13 @@ body {
         width: 50px;
     }
 
+    #text-refresh {
+        margin-top: 12vh;
+        font-size: 0.8rem;
+    }
+
     #refresh {
         width: 30px;
-        margin-top: 12vh;
     }
 
     .middle {
@@ -228,9 +241,12 @@ body {
         width: 50px;
     }
 
+    #text-refresh {
+        margin-top: 12vh;
+    }
+
     #refresh {
         width: 30px;
-        margin-top: 12vh;
     }
 
     .middle {

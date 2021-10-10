@@ -59,7 +59,8 @@
           <img src="assets/gunting.png" alt="gunting" width="100px" class="gunting p-img" id="p_gunting">
         </button>
       </div>
-      <div class="col my-md-3">
+      <div class="col area-refresh my-md-3">
+        <p id="text-refresh"></p>
         <button class="btn">
           <img src="assets/refresh.png" alt="refresh" width="60px" id="refresh">
         </button>
@@ -86,6 +87,7 @@
     const area_middle = document.querySelector(".area-middle");
     const text_middle = document.querySelector(".text-middle");
 
+    const refreshText = document.getElementById("text-refresh")
     const refreshPage = document.getElementById("refresh");
 
     class player {
@@ -141,6 +143,12 @@
                 comBatuBg.style.background = "var(--btn-play-bg)";
                 comBatuBg.style.borderRadius = "15%";
                 console.log("DRAW")
+                setTimeout(() => {
+                  p_batu.className = "disable-click";
+                  p_kertas.className = "disable-click";
+                  p_gunting.className = "disable-click";
+                  refreshText.innerHTML = "Please refresh to play again";
+                }, 1500)
               } else {
                 comBatuBg.style.background = "";
               }
@@ -163,6 +171,12 @@
                 comKertasBg.style.background = "var(--btn-play-bg)";
                 comKertasBg.style.borderRadius = "15%";
                 console.log("COM WINS")
+                setTimeout(() => {
+                  p_batu.className = "disable-click";
+                  p_kertas.className = "disable-click";
+                  p_gunting.className = "disable-click";
+                  refreshText.innerHTML = "Please refresh to play again";
+                }, 1500)
               } else {
                 comKertasBg.style.background = "";
               }
@@ -183,6 +197,12 @@
                 comGuntingBg.style.background = "var(--btn-play-bg)";
                 comBatuBg.style.borderRadius = "15%";
                 console.log("PLAYER 1 WINS");
+                setTimeout(() => {
+                  p_batu.className = "disable-click";
+                  p_kertas.className = "disable-click";
+                  p_gunting.className = "disable-click";
+                  refreshText.innerHTML = "Please refresh to play again";
+                }, 1500)
               } else {
                 comGuntingBg.style.background = "";
               }
@@ -244,6 +264,12 @@
                 comBatuBg.style.background = "var(--btn-play-bg)";
                 comBatuBg.style.borderRadius = "15%";
                 console.log("PLAYER 1 WINS");
+                setTimeout(() => {
+                  p_batu.className = "disable-click";
+                  p_kertas.className = "disable-click";
+                  p_gunting.className = "disable-click";
+                  refreshText.innerHTML = "Please refresh to play again";
+                }, 1500)
               } else {
                 comBatuBg.style.background = "";
               }
@@ -264,6 +290,12 @@
                 comKertasBg.style.background = "var(--btn-play-bg)";
                 comKertasBg.style.borderRadius = "15%";
                 console.log("DRAW");
+                setTimeout(() => {
+                  p_batu.className = "disable-click";
+                  p_kertas.className = "disable-click";
+                  p_gunting.className = "disable-click";
+                  refreshText.innerHTML = "Please refresh to play again";
+                }, 1500)
               } else {
                 comKertasBg.style.background = "";
               }
@@ -284,6 +316,12 @@
                 comGuntingBg.style.background = "var(--btn-play-bg)";
                 comGuntingBg.style.borderRadius = "15%";
                 console.log("COM WINS");
+                setTimeout(() => {
+                  p_batu.className = "disable-click";
+                  p_kertas.className = "disable-click";
+                  p_gunting.className = "disable-click";
+                  refreshText.innerHTML = "Please refresh to play again";
+                }, 1500)
               } else {
                 comGuntingBg.style.background = "";
               }
@@ -345,6 +383,12 @@
                 comBatuBg.style.background = "var(--btn-play-bg)";
                 comBatuBg.style.borderRadius = "15%";
                 console.log("COM WINS");
+                setTimeout(() => {
+                  p_batu.className = "disable-click";
+                  p_kertas.className = "disable-click";
+                  p_gunting.className = "disable-click";
+                  refreshText.innerHTML = "Please refresh to play again";
+                }, 1500)
               } else {
                 comBatuBg.style.background = "";
               }
@@ -365,6 +409,12 @@
                 comKertasBg.style.background = "var(--btn-play-bg)";
                 comKertasBg.style.borderRadius = "15%";
                 console.log("PLAYER 1 WINS");
+                setTimeout(() => {
+                  p_batu.className = "disable-click";
+                  p_kertas.className = "disable-click";
+                  p_gunting.className = "disable-click";
+                  refreshText.innerHTML = "Please refresh to play again";
+                }, 1500)
               } else {
                 comKertasBg.style.background = "";
               }
@@ -385,6 +435,12 @@
                 comGuntingBg.style.background = "var(--btn-play-bg)";
                 comGuntingBg.style.borderRadius = "15%";
                 console.log("DRAW");
+                setTimeout(() => {
+                  p_batu.className = "disable-click";
+                  p_kertas.className = "disable-click";
+                  p_gunting.className = "disable-click";
+                  refreshText.innerHTML = "Please refresh to play again";
+                }, 1500)
               } else {
                 comGuntingBg.style.background = "";
               }
