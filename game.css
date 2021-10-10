@@ -107,8 +107,54 @@ body {
     background-color: var(--btn-play-bg);
 }
 
+.p-img:hover {
+    animation-name: img-rotate;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
 @keyframes play {
     100% {
         background-color: var(--btn-play-bg);
     }
+}
+
+@keyframes img-rotate {
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
+#refresh {
+    margin-top: 15vh;
+}
+
+#refresh:hover {
+    animation: refresh;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes refresh {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.middle .result,
+.result-draw {
+    background-color: #4C9654;
+    /* position: relative; */
+    /* top: -150px; */
+    /* width: 100px; */
+    font-size: 0.7em;
+    transform: rotate(-30deg);
+    padding: 15px;
+    color: white;
+    letter-spacing: 5px;
+}
+
+.result-draw {
+    background-color: #035B0C;
 }
