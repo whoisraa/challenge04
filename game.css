@@ -142,19 +142,119 @@ body {
     }
 }
 
+.middle {
+    color: #ff4136;
+    font-weight: bolder;
+    font-size: 5rem;
+}
+
 .middle .result,
 .result-draw {
     background-color: #4C9654;
-    /* position: relative; */
-    /* top: -150px; */
-    /* width: 100px; */
-    font-size: 0.7em;
+    width: 230px;
+    height: 140px;
+    border-radius: 15px;
+    font-size: 1.3rem !important;
     transform: rotate(-30deg);
-    padding: 15px;
-    color: white;
-    letter-spacing: 5px;
+    color: white !important;
+    letter-spacing: 2px;
+}
+
+.middle .result {
+    padding: 40px 40px;
 }
 
 .result-draw {
     background-color: #035B0C;
+    padding: 53px 40px;
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+    .btn-play {
+        height: 80px;
+        width: 80px;
+    }
+
+    .player:hover,
+    .player:focus {
+        height: 80px;
+        width: 80px;
+    }
+
+    .batu,
+    .kertas,
+    .gunting {
+        width: 50px;
+    }
+
+    #refresh {
+        width: 30px;
+        margin-top: 12vh;
+    }
+
+    .middle {
+        font-size: 2.5rem;
+    }
+
+    .middle .result,
+    .result-draw {
+        margin-left: -10px;
+        padding: 10px 20px;
+        width: 100px;
+        height: 60px;
+        font-size: 0.8rem !important;
+    }
+
+    .result-draw {
+        padding: 20px 20px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+    .btn-play {
+        height: 100px;
+        width: 100px;
+    }
+
+    .player:hover,
+    .player:focus {
+        height: 100px;
+        width: 100px;
+    }
+
+    .batu,
+    .kertas,
+    .gunting {
+        width: 50px;
+    }
+
+    #refresh {
+        width: 30px;
+        margin-top: 12vh;
+    }
+
+    .middle {
+        font-size: 3rem;
+    }
+
+    .middle .result,
+    .result-draw {
+        margin-left: -20px;
+        padding: 18px 20px;
+        width: 140px;
+        height: 80px;
+        font-size: 1rem !important;
+    }
+
+    .result-draw {
+        padding: 28px 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .middle .result,
+    .result-draw {
+        margin-left: 40px;
+    }
 }

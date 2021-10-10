@@ -30,33 +30,33 @@
       </div>
       <div class="col my-md-3">
         <button class="btn btn-play player" id="player-batu">
-          <img src="assets/batu.png" alt="batu" width="100px" class="batu p-img" id="p-batu">
+          <img src="assets/batu.png" alt="batu" width="100px" class="batu p-img" id="p_batu">
         </button>
       </div>
       <div class="col my-md-3"></div>
       <div class="col my-md-3">
         <button class="btn btn-play pe-none com" id="com-batu">
-          <img src="assets/batu.png" alt="batu" width="100px" class="batu" id="c-batu">
+          <img src="assets/batu.png" alt="batu" width="100px" class="batu" id="c_batu">
         </button>
       </div>
       <div class="col my-md-3">
         <button class="btn btn-play player" id="player-kertas">
-          <img src="assets/kertas.png" alt="kertas" width="100px" class="kertas p-img" id="p-kertas">
+          <img src="assets/kertas.png" alt="kertas" width="100px" class="kertas p-img" id="p_kertas">
         </button>
       </div>
-      <div class="col middle my-md-3">
+      <div class="col middle text-center my-md-3">
         <div class="area-middle">
-          <p class="text-middle display-1 fw-bolder text-uppercase text-danger">vs</p>
+          <p class="text-middle text-uppercase">vs</p>
         </div>
       </div>
       <div class="col my-md-3">
         <button class="btn btn-play pe-none com" id="com-kertas">
-          <img src="assets/kertas.png" alt="kertas" width="100px" class="kertas" id="c-kertas">
+          <img src="assets/kertas.png" alt="kertas" width="100px" class="kertas" id="c_kertas">
         </button>
       </div>
       <div class="col my-md-3">
         <button class="btn btn-play player" id="player-gunting">
-          <img src="assets/gunting.png" alt="gunting" width="100px" class="gunting p-img" id="p-gunting">
+          <img src="assets/gunting.png" alt="gunting" width="100px" class="gunting p-img" id="p_gunting">
         </button>
       </div>
       <div class="col my-md-3">
@@ -66,63 +66,53 @@
       </div>
       <div class="col my-md-3">
         <button class="btn btn-play pe-none com" id="com-gunting">
-          <img src="assets/gunting.png" alt="gunting" width="100px" class="gunting" id="c-gunting">
+          <img src="assets/gunting.png" alt="gunting" width="100px" class="gunting" id="c_gunting">
         </button>
       </div>
     </div>
   </main>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
   </script>
   <script>
-    // PLAYER
-    const p_batu = document.getElementById("p-batu");
-    const p_kertas = document.getElementById("p-kertas");
-    const p_gunting = document.getElementById("p-gunting");
-    const playerBatuBg = document.getElementById("player-batu");
-    const playerKertasBg = document.getElementById("player-kertas");
-    const playerGuntingBg = document.getElementById("player-gunting");
+    const p_batu = document.getElementById("p_batu");
+    const p_kertas = document.getElementById("p_kertas");
+    const p_gunting = document.getElementById("p_gunting");
 
-    // RESULT
-    const area_middle = document.querySelector(".area-middle");
-    const text_middle = document.querySelector(".text-middle");
-
-    // COMPUTER
-    const c_batu = document.getElementById("c-batu");
-    const c_kertas = document.getElementById("c-kertas");
-    const c_gunting = document.getElementById("c-gunting");
     const comBatuBg = document.getElementById("com-batu");
     const comKertasBg = document.getElementById("com-kertas");
     const comGuntingBg = document.getElementById("com-gunting");
 
-    // PLAY AGAIM
+    const area_middle = document.querySelector(".area-middle");
+    const text_middle = document.querySelector(".text-middle");
+
     const refreshPage = document.getElementById("refresh");
 
-    class Player {
+    class player {
       batu() {
         p_batu.addEventListener("click", () => {
           console.log(p_batu.id)
           const comShuffle = [c_batu, c_kertas, c_gunting];
           const shuffle = comShuffle[Math.floor(Math.random() * comShuffle.length)].id;
 
-          playerBatuBg.style.background = "#C4C4C4";
-
           function set(duration1, duration2, duration3) {
             setTimeout(() => {
-              comBatuBg.style.background = "#C4C4C4";
+              comBatuBg.style.background = "var(--btn-play-bg)";
+              comBatuBg.style.borderRadius = "15%";
               setTimeout(() => {
                 comBatuBg.style.background = "";
               }, 300)
             }, duration1)
             setTimeout(() => {
-              comKertasBg.style.background = "#C4C4C4";
+              comKertasBg.style.background = "var(--btn-play-bg)";
+              comKertasBg.style.borderRadius = "15%";
               setTimeout(() => {
                 comKertasBg.style.background = "";
               }, 300)
             }, duration2)
             setTimeout(() => {
-              comGuntingBg.style.background = "#C4C4C4";
+              comGuntingBg.style.background = "var(--btn-play-bg)";
+              comGuntingBg.style.borderRadius = "15%";
               setTimeout(() => {
                 comGuntingBg.style.background = "";
               }, 300)
@@ -142,20 +132,15 @@
           }
 
           setTimeout(() => {
-            comBatuBg.style.background = "#C4C4C4";
+            comBatuBg.style.background = "var(--btn-play-bg)";
+            comBatuBg.style.borderRadius = "15%";
             setTimeout(() => {
               if (shuffle === "c_batu") {
                 area_middle.className = "result-draw";
                 text_middle.innerHTML = "DRAW";
-                comBatuBg.style.background = "#C4C4C4";
-                console.log("Hasil DRAW")
-                setTimeout(() => {
-                  if (confirm("Mau main lagi? GASSSS KLIK OK 🔥")) {
-                    history.go(0);
-                  } else {
-                    return;
-                  }
-                }, 1500)
+                comBatuBg.style.background = "var(--btn-play-bg)";
+                comBatuBg.style.borderRadius = "15%";
+                console.log("DRAW")
               } else {
                 comBatuBg.style.background = "";
               }
@@ -169,20 +154,15 @@
           console.log(shuffle)
 
           setTimeout(() => {
-            comKertasBg.style.background = "#C4C4C4";
+            comKertasBg.style.background = "var(--btn-play-bg)";
+            comKertasBg.style.borderRadius = "15%";
             setTimeout(() => {
               if (shuffle === "c_kertas") {
                 area_middle.className = "result";
-                text_middle.innerHTML = "COM <br> WIN";
-                comKertasBg.style.background = "#C4C4C4";
-                console.log("COM WIN")
-                setTimeout(() => {
-                  if (confirm("Mau main lagi? GASSSS KLIK OK 🔥")) {
-                    history.go(0);
-                  } else {
-                    return;
-                  }
-                }, 1500)
+                text_middle.innerHTML = "COM <br> WINS";
+                comKertasBg.style.background = "var(--btn-play-bg)";
+                comKertasBg.style.borderRadius = "15%";
+                console.log("COM WINS")
               } else {
                 comKertasBg.style.background = "";
               }
@@ -194,20 +174,15 @@
           }
 
           setTimeout(() => {
-            comGuntingBg.style.background = "#C4C4C4";
+            comGuntingBg.style.background = "var(--btn-play-bg)";
+            comGuntingBg.style.borderRadius = "15%";
             setTimeout(() => {
               if (shuffle === "c_gunting") {
                 area_middle.className = "result";
-                text_middle.innerHTML = "PLAYER 1 <br> WIN";
-                comGuntingBg.style.background = "#C4C4C4";
-                console.log("PLAYER WIN");
-                setTimeout(() => {
-                  if (confirm("Mau main lagi? GASSSS KLIK OK 🔥")) {
-                    history.go(0);
-                  } else {
-                    return;
-                  }
-                }, 1500)
+                text_middle.innerHTML = "PLAYER 1 <br> WINS";
+                comGuntingBg.style.background = "var(--btn-play-bg)";
+                comBatuBg.style.borderRadius = "15%";
+                console.log("PLAYER 1 WINS");
               } else {
                 comGuntingBg.style.background = "";
               }
@@ -223,23 +198,24 @@
           const shuffle = comShuffle[Math.floor(Math.random() * comShuffle.length)].id;
           console.log(shuffle)
 
-          playerKertasBg.style.background = "#C4C4C4";
-
           function set(duration1, duration2, duration3) {
             setTimeout(() => {
-              comBatuBg.style.background = "#C4C4C4";
+              comBatuBg.style.background = "var(--btn-play-bg)";
+              comBatuBg.style.borderRadius = "15%";
               setTimeout(() => {
                 comBatuBg.style.background = "";
               }, 300)
             }, duration1)
             setTimeout(() => {
-              comKertasBg.style.background = "#C4C4C4";
+              comKertasBg.style.background = "var(--btn-play-bg)";
+              comKertasBg.style.borderRadius = "15%";
               setTimeout(() => {
                 comKertasBg.style.background = "";
               }, 300)
             }, duration2)
             setTimeout(() => {
-              comGuntingBg.style.background = "#C4C4C4";
+              comGuntingBg.style.background = "var(--btn-play-bg)";
+              comGuntingBg.style.borderRadius = "15%";
               setTimeout(() => {
                 comGuntingBg.style.background = "";
               }, 300)
@@ -259,20 +235,15 @@
           }
 
           setTimeout(() => {
-            comBatuBg.style.background = "#C4C4C4";
+            comBatuBg.style.background = "var(--btn-play-bg)";
+            comBatuBg.style.borderRadius = "15%";
             setTimeout(() => {
               if (shuffle === "c_batu") {
                 area_middle.className = "result";
-                text_middle.innerHTML = "PLAYER 1 <br> WIN";
-                comBatuBg.style.background = "#C4C4C4";
-                console.log("PLAYER WIN");
-                setTimeout(() => {
-                  if (confirm("Mau main lagi? GASSSS KLIK OK 🔥")) {
-                    history.go(0);
-                  } else {
-                    return;
-                  }
-                }, 1500)
+                text_middle.innerHTML = "PLAYER 1 <br> WINS";
+                comBatuBg.style.background = "var(--btn-play-bg)";
+                comBatuBg.style.borderRadius = "15%";
+                console.log("PLAYER 1 WINS");
               } else {
                 comBatuBg.style.background = "";
               }
@@ -283,23 +254,16 @@
             return;
           }
 
-
-
           setTimeout(() => {
-            comKertasBg.style.background = "#C4C4C4";
+            comKertasBg.style.background = "var(--btn-play-bg)";
+            comKertasBg.style.borderRadius = "15%";
             setTimeout(() => {
               if (shuffle === "c_kertas") {
                 area_middle.className = "result-draw";
                 text_middle.innerHTML = "DRAW";
-                comKertasBg.style.background = "#C4C4C4";
+                comKertasBg.style.background = "var(--btn-play-bg)";
+                comKertasBg.style.borderRadius = "15%";
                 console.log("DRAW");
-                setTimeout(() => {
-                  if (confirm("Mau main lagi? GASSSS KLIK OK 🔥")) {
-                    history.go(0);
-                  } else {
-                    return;
-                  }
-                }, 1500)
               } else {
                 comKertasBg.style.background = "";
               }
@@ -311,20 +275,15 @@
           }
 
           setTimeout(() => {
-            comGuntingBg.style.background = "#C4C4C4";
+            comGuntingBg.style.background = "var(--btn-play-bg)";
+            comGuntingBg.style.borderRadius = "15%";
             setTimeout(() => {
               if (shuffle === "c_gunting") {
                 area_middle.className = "result";
-                text_middle.innerHTML = "COM WIN";
-                comGuntingBg.style.background = "#C4C4C4";
-                console.log("COM WIN");
-                setTimeout(() => {
-                  if (confirm("Mau main lagi? GASSSS KLIK OK 🔥")) {
-                    history.go(0);
-                  } else {
-                    return;
-                  }
-                }, 1500)
+                text_middle.innerHTML = "COM <br> WINS";
+                comGuntingBg.style.background = "var(--btn-play-bg)";
+                comGuntingBg.style.borderRadius = "15%";
+                console.log("COM WINS");
               } else {
                 comGuntingBg.style.background = "";
               }
@@ -340,23 +299,24 @@
           const shuffle = comShuffle[Math.floor(Math.random() * comShuffle.length)].id;
           console.log(shuffle)
 
-          playerGuntingBg.style.background = "#C4C4C4";
-
           function set(duration1, duration2, duration3) {
             setTimeout(() => {
-              comBatuBg.style.background = "#C4C4C4";
+              comBatuBg.style.background = "var(--btn-play-bg)";
+              comBatuBg.style.borderRadius = "15%";
               setTimeout(() => {
                 comBatuBg.style.background = "";
               }, 300)
             }, duration1)
             setTimeout(() => {
-              comKertasBg.style.background = "#C4C4C4";
+              comKertasBg.style.background = "var(--btn-play-bg)";
+              comKertasBg.style.borderRadius = "15%";
               setTimeout(() => {
                 comKertasBg.style.background = "";
               }, 300)
             }, duration2)
             setTimeout(() => {
-              comGuntingBg.style.background = "#C4C4C4";
+              comGuntingBg.style.background = "var(--btn-play-bg)";
+              comGuntingBg.style.borderRadius = "15%";
               setTimeout(() => {
                 comGuntingBg.style.background = "";
               }, 300)
@@ -376,20 +336,15 @@
           }
 
           setTimeout(() => {
-            comBatuBg.style.background = "#C4C4C4";
+            comBatuBg.style.background = "var(--btn-play-bg)";
+            comBatuBg.style.borderRadius = "15%";
             setTimeout(() => {
               if (shuffle === "c_batu") {
                 area_middle.className = "result";
-                text_middle.innerHTML = "COM WIN";
-                comBatuBg.style.background = "#C4C4C4";
-                console.log("COM WIN");
-                setTimeout(() => {
-                  if (confirm("Mau main lagi? GASSSS KLIK OK 🔥")) {
-                    history.go(0);
-                  } else {
-                    return;
-                  }
-                }, 1500)
+                text_middle.innerHTML = "COM <br> WINS";
+                comBatuBg.style.background = "var(--btn-play-bg)";
+                comBatuBg.style.borderRadius = "15%";
+                console.log("COM WINS");
               } else {
                 comBatuBg.style.background = "";
               }
@@ -400,23 +355,16 @@
             return;
           }
 
-
-
           setTimeout(() => {
-            comKertasBg.style.background = "#C4C4C4";
+            comKertasBg.style.background = "var(--btn-play-bg)";
+            comKertasBg.style.borderRadius = "15%";
             setTimeout(() => {
               if (shuffle === "c_kertas") {
                 area_middle.className = "result";
-                text_middle.innerHTML = "PLAYER 1 <br> WIN";
-                comKertasBg.style.background = "#C4C4C4";
-                console.log("Player WIN");
-                setTimeout(() => {
-                  if (confirm("Mau main lagi? GASSSS KLIK OK 🔥")) {
-                    history.go(0);
-                  } else {
-                    return;
-                  }
-                }, 1500)
+                text_middle.innerHTML = "PLAYER 1 <br> WINS";
+                comKertasBg.style.background = "var(--btn-play-bg)";
+                comKertasBg.style.borderRadius = "15%";
+                console.log("PLAYER 1 WINS");
               } else {
                 comKertasBg.style.background = "";
               }
@@ -428,20 +376,15 @@
           }
 
           setTimeout(() => {
-            comGuntingBg.style.background = "#C4C4C4";
+            comGuntingBg.style.background = "var(--btn-play-bg)";
+            comGuntingBg.style.borderRadius = "15%";
             setTimeout(() => {
               if (shuffle === "c_gunting") {
                 area_middle.className = "result-draw";
                 text_middle.innerHTML = "DRAW";
-                comGuntingBg.style.background = "#C4C4C4";
-                console.log("Hasil DRAW");
-                setTimeout(() => {
-                  if (confirm("Mau main lagi? GASSSS KLIK OK 🔥")) {
-                    history.go(0);
-                  } else {
-                    return;
-                  }
-                }, 1500)
+                comGuntingBg.style.background = "var(--btn-play-bg)";
+                comGuntingBg.style.borderRadius = "15%";
+                console.log("DRAW");
               } else {
                 comGuntingBg.style.background = "";
               }
@@ -452,14 +395,12 @@
 
       playAgain() {
         refreshPage.addEventListener("click", () => {
-          history.go(0);
+          location.reload();
         })
       }
     }
 
-
-    const main = new Player();
-
+    const main = new player();
 
     main.batu();
     main.kertas();
